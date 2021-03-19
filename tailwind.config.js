@@ -14,8 +14,9 @@ module.exports = {
         sans: ['Helvetica Neue', ...defualtTheme.fontFamily.sans],
       },
       lineHeight: {
-        'tightest': '85px'
-      }
+        'tightest': '85px',
+        'tightester': '100px'
+      },
     },
   },
   variants: {

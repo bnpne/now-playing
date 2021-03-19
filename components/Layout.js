@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import In from './in'
 
 
 const Layout = ({ children, meta: pageMeta }) => {
@@ -54,7 +55,8 @@ const Layout = ({ children, meta: pageMeta }) => {
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.cardImage} />
       </Head>
-      <div className="mx-auto w-full h-screen font-light text-gray bg-dark ">
+      <div className="mx-auto w-full h-screen font-medium text-dark bg-gray ">
+        {/* <In /> */}
         {children}
       </div>
     </div>

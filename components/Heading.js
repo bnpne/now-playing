@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Heading = () => {
   return (
-    <div className="tracking-tight leading-4 sm:leading-5 text-lg sm:text-xl block space-y-10 md:space-y-0 md:flex md:justify-between md:items-start">
+    <div className="font-light tracking-tight leading-4 sm:leading-5 text-md sm:text-base block space-y-5 md:space-y-0 md:flex md:justify-between md:items-start relative z-20 ">
       <div className="max-w-xs">
         NOW PLAYING – A LIL APP THAT TELLS YOU WHAT BEN IS LISTENING TO ON
         SPOTIFY.

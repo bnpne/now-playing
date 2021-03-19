@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Heading from '../components/Heading'
 import Layout from '../components/Layout'
 import useSWR from 'swr'
 import fetcher from  '../lib/fetcher'
+import Back from '../components/Back'
  
 const Index = () => {
   const { data } = useSWR('/api/now-playing', fetcher)
@@ -14,29 +15,29 @@ const Index = () => {
   return (
     <div>
       <Layout>
-        <div className="flex flex-col h-screen overflow-auto py-1 sm:py-3 lg:py-5 px-1 sm:px-12 md:px-24 lg:px-32">
+        <div className=" flex flex-col h-screen overflow-auto py-1 sm:py-3 lg:py-5 px-1 sm:px-3 md:px-6 lg:px-12">
           <Heading />
-          <div className="my-auto tracking-tight leading-4 md:leading-5 text-lg md:text-xl">
-            <p>CURRENTLY PLAYING:</p>
-            <div className="py-3 pb-5 text-5xl md:text-8xl">
-              {data?.title ? (
-                <div className="space-x-10 md:space-x-20">
+          <div className="mt-auto tracking-tight leading-4 md:leading-5 text-md sm:text-base relative z-20">
+            <p className="font-light">CURRENTLY PLAYING:</p>
+            <div className="py-1 sm:py-3 pb-5 text-3xl sm:text-5xl md:text-8xl">
+              <div className="space-x-10 md:space-x-20 leading-8 sm:leading-10 md:leading-tightest lg:leading-tightester">
+                {data?.title ? (
                   <a
                     href={data.songUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:underline"
                   >
-                    '{data.title.toUpperCase()}'
+                    <span>'{data.title.toUpperCase()}'</span>
                   </a>
-                  <h2>– {data.artist.toUpperCase()}</h2>
-                </div>
-              ) : (
-                <h1>NOTHING IS PLAYING...</h1>
-              )}
+                ) : (
+                  <h1>NOT PLAYING</h1>
+                )}
+                {data?.artist && <h2>– {data.artist.toUpperCase()}</h2>}
+              </div>
             </div>
-            <div>{data?.isPlaying ? <p>PLAYING</p> : <p>PAUSED</p>}</div>
           </div>
+          <div>{data?.imageUrl && <Back url={data.imageUrl} />}</div>
         </div>
       </Layout>
     </div>
@@ -46,5 +47,3 @@ const Index = () => {
 export default Index
 
 // TODO: Add transitions
-// TODO: Make album art show in background 
-// TODO: Work forever and not have to play
