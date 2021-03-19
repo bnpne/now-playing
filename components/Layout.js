@@ -7,7 +7,7 @@ const Layout = ({ children, meta: pageMeta }) => {
   const meta = {
     title: 'NOW PLAYING | BN PNE',
     description: 'A lil app that tells you what Ben is listening to on Spotify.',
-    cardImage: 'https://np.bnpne.io/np.png',
+    cardImage: '/np.png',
     keywords: [
       'spotify',
       'next'
