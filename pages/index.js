@@ -31,13 +31,21 @@ const Index = () => {
                     <span>'{data.title.toUpperCase()}'</span>
                   </a>
                 ) : (
-                  <h1>NOT PLAYING</h1>
+                  <h1>
+                    I'M NOT LISTENING TO ANYTHING RIGHT NOW. COME BACK SOON.
+                  </h1>
                 )}
                 {data?.artist && <h2>– {data.artist.toUpperCase()}</h2>}
               </div>
             </div>
           </div>
-          <div>{data?.imageUrl && <Back url={data.imageUrl} />}</div>
+          <div>
+            {data?.imageUrl ? (
+              <Back url={data.imageUrl} />
+            ) : (
+              <Back url='/jerry.jpg' />
+            )}
+          </div>
         </div>
       </Layout>
     </div>
