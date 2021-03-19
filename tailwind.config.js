@@ -1,6 +1,9 @@
-const defualtTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
+  purge: [
+
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -10,11 +13,11 @@ module.exports = {
         dark: '#101010',
       },
       fontFamily: {
-        sans: ['Helvetica Neue', ...defualtTheme.fontFamily.sans],
+        sans: ['Helvetica Neue', ...defaultTheme.fontFamily.sans],
       },
       lineHeight: {
-        'tightest': '85px',
-        'tightester': '100px'
+        tightest: '85px',
+        tightester: '100px',
       },
     },
   },

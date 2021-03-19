@@ -54,7 +54,6 @@ const Layout = ({ children, meta: pageMeta }) => {
         <meta name="twitter:image" content={meta.cardImage} />
       </Head>
       <div className="mx-auto w-full h-screen font-medium text-dark bg-gray ">
-        {/* <In /> */}
         {children}
       </div>
     </div>
