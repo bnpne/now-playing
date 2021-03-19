@@ -1,8 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import In from './in'
-
 
 const Layout = ({ children, meta: pageMeta }) => {
   const router = useRouter()
