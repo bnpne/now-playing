@@ -6,12 +6,10 @@ const Layout = ({ children, meta: pageMeta }) => {
   const router = useRouter()
   const meta = {
     title: 'NOW PLAYING | BN PNE',
-    description: 'A lil app that tells you what Ben is listening to on Spotify.',
-    cardImage: '/np.png',
-    keywords: [
-      'spotify',
-      'next'
-    ],
+    description:
+      'A lil app that tells you what Ben is listening to on Spotify.',
+    cardImage: '/jerry.jpg',
+    keywords: ['spotify', 'next'],
     ...pageMeta,
   }
 
