@@ -4,7 +4,6 @@ import Layout from '../components/Layout'
 import useSWR from 'swr'
 import fetcher from '../lib/fetcher'
 import Back from '../components/Back'
-import getColors from 'get-image-colors'
 
 const Index = () => {
   const { data } = useSWR('/api/now-playing', fetcher)
@@ -12,6 +11,12 @@ const Index = () => {
   if (!data) {
     return null
   }
+
+  // let colors = !data.imageUrl
+  //   ? ['#ffffff', '#000000']
+  //   : colorThief.getColor(data.imageUrl).then((color) => console.log(color))
+
+  // console.log(colors)
 
   return (
     <div>
